@@ -1,0 +1,84 @@
+.window {
+    width: 100%;
+    height: 250px;
+    border: 1px solid #d2d2d2;
+    overflow: hidden;
+    border-radius:8px;
+    background-color:#FFF;
+    box-shadow:6px 6px 0 rgba(0,0,0,0.05);
+}
+
+.title {
+    font-size: 20px;
+    text-transform: uppercase;
+    border-bottom: 1px solid #f1f1f1;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.content {
+    position: relative;
+    flex: 1;
+}
+.content p {
+  font-size:14px;
+  line-height:1.6;
+}
+
+ul{
+    height: 100%;
+    list-style: none;
+    position: relative;
+    padding: 5px 40px 5px 40px;
+}
+li{
+    height: 100%;
+    padding: 0px;
+    position: absolute;
+}
+button {
+    border: 2px solid #e2e2e2;
+    border-radius: 9999px;
+    background: none;
+    padding: 12px 20px;
+    margin: 0;
+    font-size: 15px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.4s;
+}
+button:hover {
+    background-color: #ebebeb;
+}
+.answer {
+    animation: slide-in-anim 0.6s ease-out forwards;
+    transform: translateY(100%);
+}
+.hide{
+    display: none;
+}
+li.answered {
+	animation: slide-out-anim 0.6s ease-out forwards;
+}
+@keyframes slide-out-anim {
+	15% {
+		opacity: 0.4;
+		transform: translateY(-40%);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+}
+@keyframes slide-in-anim {
+	15% {
+		opacity: 0.2;
+		transform: translateY(60%);
+	}
+	100% {
+		opacity: 1;
+		transform: translateY(0%);
+	}
+}
