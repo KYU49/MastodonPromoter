@@ -11,37 +11,419 @@
 	<!--<link rel="icon" href="favicon.ico" type="image/png">-->
 	<link rel="stylesheet" href="mstdn_promoter.css">
 	<script src="mstdn_promoter.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
 </head>
 
 <body>
     <div class="window">
         <ul>
-            <li>
+            <li id="r1">
                 <h2 class="title">Mastodonとは？</h2>
                 <div class="content">
-                    <p>インスタンス(= サーバー)がたくさんあるTwitterのようなものです。<br>投稿は同じインスタンスの人が見られるローカルタイムラインと、<br>誰もが見られるグローバルタイムラインに表示されます。</p>
-                    <button class="next">次へ</button>
+                    <p>
+                        インスタンス(= サーバー)がたくさんあるTwitterのようなものです。<br>
+                        特徴として、フォロワーの投稿を見られる「ホーム」の他に、<br>
+                        インスタンスごとの「ローカルタイムライン (LTL)」があり、<br>
+                        自分を含め、所属しているユーザーの投稿を見ることができます。
+                    </p>
+                    <button class="next" next="r2">インスタンスを選ぼう</button>
                 </div>
             </li>
             
-            <li>
+            <li id="r2">
                 <h2 class="title">インスタンスはどれにしたら良い？</h2>
                 <div class="content">
-                    <p>ゲームなど話題が合うインスタンスに登録するか、<br>大きめのインスタンスで色んな人に見てもらうのもありです。<br>このツールはあなたに合ったインスタンスを提案します。</p>
-                    <button class="next">早速インスタンス診断をする</button>
+                    <p>
+                        Mastodonでは所属するインスタンスを自分で選んで登録する必要があります。<br>
+                        たとえば、ゲームやアニメなどの話題が合う人が集まったインスタンスに登録したり、<br>
+                        分野を問わず、たくさん登録者がいるインスタンスで交流を増やしたりするのもありです。<br>
+                        もちろん、別のインスタンスの人もフォローできるので、登録するインスタンスは好みで選べばOKです。<br>
+                        <br>
+                        このツールでは、あなたに合ったインスタンスを提案いたします。
+                    </p>
+                    <button class="next" next="kibo">早速インスタンス診断をする</button>
                 </div>
             </li>
 
-            <li>
-                <h2 class="title"></h2>
+            <li id="kibo">
+                <h2 class="title">大きいインスタンス？分野別インスタンス？</h2>
                 <div class="content">
-                    <p>ゲームなど話題が合うインスタンスに登録するか、<br>大きめのインスタンスで色んな人に見てもらうのもありです。<br>このツールはあなたに合ったインスタンスを提案します。</p>
-                    <button class="next">早速インスタンスを探す</button>
+                    <p>
+                        大きいインスタンスでは、ローカルタイムラインにいろんな話題の投稿があり、<br>
+                        自分の投稿も多くの人に見てもらう可能性が上がります。<br>
+                        <br>
+                        分野別インスタンスでは共通の話題で盛り上がりやすい利点があります。<br>
+                        もちろん、その分野以外の話題を投稿しても大丈夫です。<br>
+                        <br>
+                        大きいインスタンス、分野別の小さいインスタンス、どちらが好きですか？
+                    </p>
+                    <button class="next" next="big">大きい方</button><br>
+                    <button class="next" next="small">分野別</button><br>
+                    <button class="next" next="recommended">つべこべ言わずにお勧め教えて</button>
                 </div>
             </li>
+
+            <li id="recommended">
+                <h2 class="title">目的別の個人的おすすめです</h2>
+                <div class="content">
+                    <button class="next" next="mastodon_japan_net">テレビとか動物とかの話題(非ネットユーザー向け)</button><br>
+                    <button class="next" next="vivaldi_net">ちょっと技術寄り</button><br>
+                    <button class="next" next="best-friends_chat">ニコニコが元運営, 現個人運営</button><br>
+                    <button class="next" next="mstdn_jp">成人向けコンテンツ可</button><br>
+                    <button class="next" next="fedibird_com">個人的イチオシ(詳しい人以外非推奨)</button>
+                </div>
+            </li>
+            
+            <li id="big">
+                <h2 class="title">雰囲気はどんなが好み？</h2>
+                <div class="content">
+                    <button class="next" next="shimo">下ネタも気にしないでラフにおしゃべり</button><br>
+                    <button class="next" next="big_topic">あんまり、そういう投稿は見たくないかな...</button><br>
+                </div>
+            </li>
+            
+            
+            <li id="shimo">
+                <h2 class="title">どのくらい大丈夫？</h2>
+                <div class="content">
+                    <button class="next" next="pawoo_net">成人向け画像も投稿したいし、見たい</button><br>
+                    <button class="next" next="mstdn_jp">たまに流れて来るくらいにしてほしい</button><br>
+                    <button class="next" next="best-friends_chat">少ないに越したことはない</button>
+                </div>
+            </li>
+
+            <li id="big_topic">
+                <h2 class="title">どんな話題が好き？</h2>
+                <div class="content">
+                    <button class="next" next="toot_blue">社会人っぽい話題(すこーし時事ネタ多め)</button><br>
+                    <button class="next" next="vivaldi_net">PCとか技術系</button><br>
+                    <button class="next" next="mastodon_japan_net">動物・旅行・テレビとか日常系</button><br>
+                    <button class="next" next="best-friends_chat">インターネット老人会</button><br>
+                    <button class="next" next="oransns_com">ちょっとクセがある</button>
+                </div>
+            </li>
+            
+            <li id="small">
+                <h2 class="title">どんな話題が好き？</h2>
+                <div class="content">
+                    <button class="next" next="game">ゲーム</button><br>
+                    <button class="next" next="indoor">おうちでやる趣味</button><br>
+                    <button class="next" next="outdoor">外でやる趣味</button><br>
+                    <button class="next" next="big_topic">そこそこ広い話題がいいかも</button>
+                </div>
+            </li>
+
+            <li id="game">
+                <h2 class="title">ゲームのジャンルは？</h2>
+                <div class="content">
+                    <button class="next" next="pokemon_mastportal_info">ポケモン</button><br>
+                    <button class="next" next="ika_queloud_net">スプラトゥーン</button><br>
+                    <button class="next" next="animal-crossing_mastportal_info">どうぶつの森</button><br>
+                    <button class="next" next="otogamer_me">音ゲー</button><br>
+                    <button class="next" next="pcgamer_social">PCゲー</button>
+                </div>
+            </li>
+
+            <li id="indoor">
+                <h2 class="title">おうちでやる趣味</h2>
+                <div class="content">
+                    <button class="next" next="eigadon_net">映画</button><br>
+                    <button class="next" next="otoya_space">音楽</button><br>
+                    <button class="next" next="cosmedn_net">コスメ</button><br>
+                    <button class="next" next="photodn_net">写真</button>
+                </div>
+            </li>
+
+            <li id="outdoor">
+                <h2 class="title">外でやる趣味</h2>
+                <div class="content">
+                    <button class="next" next="photodn_net">写真</button><br>
+                    <button class="next" next="yakyudon_net">野球</button><br>
+                    <button class="next" next="mstdn-bike_net">バイク</button>
+                </div>
+            </li>
+            
+            <li id="app">
+                <h2 class="title">お勧めのスマホ用アプリ</h2>
+                <div class="content">
+                    Twitterと異なり、好きなクライアントを使用する自由があります。<br>
+                    その分、スマホアプリが大量にあって、使いやすいものが見つけられないかと思います。<br>
+                    そこで、個人的におすすめのアプリを紹介します。<br><br>
+                    Android: <a href="https://play.google.com/store/apps/details?id=com.keylesspalace.tusky" target="_blank">Tusky</a><br>
+                    Android(玄人向き): <a href="https://play.google.com/store/apps/details?id=jp.juggler.subwaytooter" target="_blank">Subway tooter</a><br>
+                    iOS: <a href="https://apps.apple.com/us/app/ivory-for-mastodon-by-tapbots/id6444602274" target="_blank">Ivory</a><br><br>
+                    <button class="next" next="login">インストールできた</button>
+                </div>
+            </li>
+
+            <li id="login">
+                <h2 class="title">ログイン方法</h2>
+                <div class="content">
+                    アプリを起動すると、先程登録したインスタンスのURLを最初に入れる必要があります。<br>
+                    例えば、「fedibird.com」など。<br>
+                    その後、登録した「ID」と「パスワード」を入力するとログインできます。<br>
+                    <button class="next" next="useage">簡単な使い方(工事中)</button>
+                </div>
+            </li>
+
+            <!-- ここから各インスタンス -->
+
+             <li id="photodn_net">
+                <h2 class="title">写真好きのあなたに！</h2>
+                <div class="content">
+                    みんなが写真 + 一言を上げているインスタンスです。<br>
+                    コメントのみの投稿は少なめ<br>
+                    登録しているユーザー層の治安がかなり良い印象<br>
+                    <a href="https://photodn.net/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://photodn.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+
+             <li id="yakyudon_net">
+                <h2 class="title">野球好きのあなたに！</h2>
+                <div class="content">
+                    管理者がMastodon界隈で有名な人で安心ですが、現在登録が承認制。<br>
+                    他のインスタンスと違って、野球以外の投稿がほとんどないかもしれません。<br>
+                    <a href="https://yakyudon.net/public" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://yakyudon.net/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://yakyudon.net/about" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="mstdn-bike_net">
+                <h2 class="title">バイク好きのあなたに！</h2>
+                <div class="content">
+                    インスタンスの説明を読む限り、とてもちゃんとされたサーバー管理者が運営されています。<br>
+                    しかし、ローカルタイムラインを登録なしだと見られないため、中身を確認できていません。<br>
+                    <a href="https://mstdn-bike.net/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://mstdn-bike.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="eigadon_net">
+                <h2 class="title">映画好きのあなたに！</h2>
+                <div class="content">
+                    管理者がMastodon界隈で有名な人で安心。<br>
+                    最近見た映画の話題を投稿しており、読んでいると自分もその映画が見たくなってしまいます。<br>
+                    Mastodonの機能として、センシティブな話題やネタバレなどを隠す「CW (content warning)」という機能があり、<br>
+                    ネタバレが気になる方でもある程度は問題なく利用できると思います。<br>
+                    映画に関係のない話題の投稿は少なめ<br>
+                    登録しているユーザー層の治安は良い。<br>
+                    <a href="https://eigadon.net/public" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://eigadon.net/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://eigadon.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="otoya_space">
+                <h2 class="title">音楽ガチ勢？</h2>
+                <div class="content">
+                    当然音楽の話題が多いですが、それ以外の関係ないつぶやきもたくさんあります。<br>
+                    作曲や演奏など作る側の人も聞く側の人も共存しているみたいです。<br>
+                    登録ユーザー層の治安はまあまあ良い。<br>
+                    <a href="https://otoya.space/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://otoya.space/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://otoya.space/invite/xRW4um2X" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="cosmedn_net">
+                <h2 class="title">他ではほとんど話題に出ないコスメ！</h2>
+                <div class="content">
+                    Mastodonの性質上、どうしてもギーク寄りの人が多い中、<br>
+                    数少ないコスメ系の話題を中心としたインスタンス。<br>
+                    「１日の出来事を呟く場としても」との記載がありますが、コスメ系の話題以外は少なめ。<br>
+                    登録ユーザー層の治安はまあまあ良い印象。<br>
+                    <a href="https://cosmedn.net/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://cosmedn.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            
+            <li id="pokemon_mastportal_info">
+                <h2 class="title">ポケマス</h2>
+                <div class="content">
+                    詳しくなくても、ポケモンが好きなら誰でもOKというスタンスのインスタンス<br>
+                    ポケモン以外の話題も多く、馴染みやすい印象で結構お勧め。<br>
+                    登録ユーザー層の治安はまあまあ良い印象。<br>
+                    <a href="https://pokemon.mastportal.info/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://pokemon.mastportal.info/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://pokemon.mastportal.info/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="ika_queloud_net">
+                <h2 class="title">イカトドン</h2>
+                <div class="content">
+                    とにかくスプラトゥーンの話題であふれるインスタンス。<br>
+                    それ以外の話題が制限されているわけではなく、関係ない投稿もあるが、<br>
+                    イカの熱に埋もれて流れていってしまっている印象。<br>
+                    専用のDiscordも有り、交流のあるユーザーと一緒にゲームすることもできます。<br>
+                    オンラインゲーム独特のギスギスした感じはなく、登録ユーザー層の治安は良さげ。<br>
+                    <a href="https://ika.queloud.net/public" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://ika.queloud.net/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://ika.queloud.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="animal-crossing_mastportal_info">
+                <h2 class="title">どうぶつの森インスタンス</h2>
+                <div class="content">
+                    ローカルタイムラインを確認できていないので、詳細は不明です。<br>
+                    <a href="https://animal-crossing.mastportal.info/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://animal-crossing.mastportal.info/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="otogamer_me">
+                <h2 class="title">音ゲー全般</h2>
+                <div class="content">
+                    音ゲー全般のインスタンスです。<br>
+                    音ゲーの結果を貼る人もちょくちょくいますが、<br>
+                    雑多な話題も多くて馴染みやすい印象です。<br>
+                    登録ユーザー層の治安は良さげ。<br>
+                    <a href="https://otogamer.me/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://otogamer.me/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://otogamer.me/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="pcgamer_social">
+                <h2 class="title">PCゲーマー向け</h2>
+                <div class="content">
+                    PCゲーム向けの機能がとても拡充されているインスタンスです。<br>
+                    サーバー管理者がしっかりしている印象があるため、おすすめです。<br>
+                    ゲーム好きが日常を投稿していることも多いので、ゲーム以外の会話も多めです。<br>
+                    登録ユーザー層の治安はかなり良いですが、当然エロゲーの話題も許可されているため注意。<br>
+                    <a href="https://pcgamer.social/public" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://pcgamer.social/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://pcgamer.social/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="pawoo_net">
+                <h2 class="title">元Pixiv運営のPawoo</h2>
+                <div class="content">
+                    元々はPixiv運営のため、二次元の成人向けコンテンツなども投稿可能なインスタンスです。<br>
+                    ユーザー数が世界トップクラスに多いため、最近、応答が悪いのであまり推奨しません。<br>
+                    また、二次元成人向けコンテンツ投稿可能なこともあり、治安が最悪です。<br>
+                    ただし、二次元コンテンツの投稿が一番盛んなインスタンスのため、目的によっては有りだと思います。<br>
+                    <a href="https://pawoo.net/about" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://pawoo.net/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://pawoo.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="mstdn_jp">
+                <h2 class="title">mstdn.jp</h2>
+                <div class="content">
+                    日本最大規模のインスタンスの一つです。<br>
+                    下ネタが飛び交うなど、あまり治安がよく有りません。<br>
+                    利点としては、ユーザー数が多いほか、海外ユーザーもちらほらいること、<br>
+                    成人向けコンテンツの投稿が可能なことがあります。<br>
+                    <a href="https://mstdn.jp/public" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://mstdn.jp/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://mstdn.jp/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="best-friends_chat">
+                <h2 class="title">元々ニコニコが運営していたインスタンス</h2>
+                <div class="content">
+                    元々はニコニコが運営していたため、ノリがインターネット老人会に適しています。<br>
+                    日本のインスタンスの中ではユーザー数が多め。<br>
+                    成人向けコンテンツの投稿が禁止のため、そこまで治安が悪くない印象。<br>
+                    <a href="https://best-friends.chat/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://best-friends.chat/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="toot_blue">
+                <h2 class="title">社会人が多そうなインスタンス</h2>
+                <div class="content">
+                    基本的には雑多な話題を投稿するインスタンスですが、<br>
+                    サーバー管理者にすこーし時事ネタ多めにしたい意思があるため、社会人層が多い印象です。<br>
+                    キツめの意見(社会に疲れてる感じ)や2chっぽさがあるため、ローカルタイムラインの確認推奨です。<br>
+                    ちょっとクセがあるため、治安は一概に判断できないです。<br>
+                    <a href="https://toot.blue/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://toot.blue/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://toot.blue/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="vivaldi_net">
+                <h2 class="title">言わずとしれたVivaldi</h2>
+                <div class="content">
+                    有名なVivaldiが運営しているインスタンスです。<br>
+                    海外サーバーなのに、日本人がかなり多いです。<br>
+                    その特性上、少し技術寄りの内容が多く、個人的にはおすすめです。<br>
+                    登録しているユーザー層の治安は良い。<br>
+                    インスタンス名はURLの「social.vivaldi.net」ではなく、「vivaldi.net」になる点に注意してください(アプリとかからのログイン時に必要)。<br>
+                    運営がEUのため、成人向けコンテンツの他に差別などの投稿にも厳しいので注意。<br>
+                    <a href="https://social.vivaldi.net/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://social.vivaldi.net/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://login.vivaldi.net/profile/id/signup" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="mastodon_japan_net">
+                <h2 class="title">日本人向け最大規模</h2>
+                <div class="content">
+                    日本人向け最大規模のインスタンスのうち、一番治安のよいインスタンスです。<br>
+                    ネットユーザーというより、テレビや動物の話題を投稿するユーザーが多い特徴があります。<br>
+                    <a href="https://mastodon-japan.net/public/local" target="_blank">ローカルタイムラインを覗く</a><br>
+                    <a href="https://mastodon-japan.net/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://mastodon-japan.net/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="oransns_com">
+                <h2 class="title">癖のあるインスタンス</h2>
+                <div class="content">
+                    ちょっと癖のあるインスタンスで、いわゆるネットユーザー多め。<br>
+                    ルールを明記しない不文律で動いているインスタンスなので、逆に治安は良さげ。<br>
+                    <a href="https://oransns.com/about" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://oransns.com/auth/sign_up" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
+            <li id="fedibird_com">
+                <h2 class="title">Fedibird</h2>
+                <div class="content">
+                    カスタマイズされまくったインスタンス。<br>
+                    ローカルタイムラインがそもそも存在しないなど、<br>
+                    ユーザー層ではなく、インスタンス自体に癖があるため、詳しい人以外は非推奨。<br>
+                    他のインスタンスのタイムラインをひとまとめに購読したり、ハッシュタグで購読したり、<br>
+                    同一インスタンス内などに限って検索できたりと、かなり多機能で個人的には一番お勧め。<br>
+                    <a href="https://fedibird.com/about/more" target="_blank">サーバーのルールを確認</a><br>
+                    <a href="https://fedibird.com/invite/9qXv82bA" target="_blank">このインスタンスで登録！</a><br><br>
+                    <button class="next" next="app">登録終了！スマホアプリが欲しい</button>
+                </div>
+            </li>
+            
         </ul>
     </div>
-    <div id="counter">0</div>
+    <div id="back">&lt; 戻る</div>
 </body>
 
 </html>
