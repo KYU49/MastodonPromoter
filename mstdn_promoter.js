@@ -34,11 +34,12 @@ window.onload = function(){
             a.target = "_blank";
             li[i].appendChild(a);
         }
-        let sc = document.createElement("script");
-        sc.setAttribute("src", "https://platform.twitter.com/widgets.js");
-        sc.setAttribute("charset", "utf-8");
-        body.appendChild(sc);
     }
+
+    let sc = document.createElement("script");
+    sc.setAttribute("src", "https://platform.twitter.com/widgets.js");
+    sc.setAttribute("charset", "utf-8");
+    document.body.appendChild(sc);
 
     // 戻るボタン
     document.getElementById("back").onclick = function(){
