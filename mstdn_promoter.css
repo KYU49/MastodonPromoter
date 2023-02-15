@@ -21,6 +21,7 @@
 .content {
     position: relative;
     flex: 1;
+    margin-bottom: 10px;
 }
 .content p {
   font-size: 12px;

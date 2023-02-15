@@ -28,11 +28,10 @@ window.onload = function(){
             a.href = "https://twitter.com/share?ref_src=twsrc%5Etfw";
             a.classList.add("twitter-share-button");
             a.setAttribute("data-text", "あなたにぴったりのMastodonインスタンスは「" + li[i].getElementsByClassName("title")[0].innerText +"」");
-            a.setAttribute("data-url", location.href + "?" + li[0].id);
+            a.setAttribute("data-url", location.href + "?" + li[i].id);
             a.setAttribute("data-hashtags", "Mastodon診断");
             a.text = "Tweeterで共有！";
             a.target = "_blank";
-            a.style.margin = "5px 0 5px 0";
             li[i].appendChild(a);
         }
     }
