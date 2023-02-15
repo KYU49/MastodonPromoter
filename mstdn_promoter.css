@@ -1,5 +1,4 @@
 .window {
-    width: 99vw;
     height: 90vh;
     border: 1px solid #d2d2d2;
     overflow: hidden;
@@ -7,6 +6,8 @@
     background-color:#FFF;
     box-shadow:6px 6px 0 rgba(0,0,0,0.05);
     font-family: 'Noto Sans JP', sans-serif;
+    left: 1vw;
+    right: 1vw;
 }
 
 .title {
@@ -30,11 +31,12 @@ ul{
     height: 100%;
     list-style: none;
     position: relative;
-    padding: 0 15px 0 15px;
 }
 li{
     height: 100%;
     padding: 0px;
+    left: 15px;
+    right: 15px;
     position: absolute;
     display: none;
 }
@@ -46,7 +48,7 @@ button {
     border-radius: 9999px;
     background: none;
     padding: 12px 20px;
-    margin: 0;
+    margin: 1px;
     font-size: 15px;
     letter-spacing: 0.1em;
     text-transform: uppercase;

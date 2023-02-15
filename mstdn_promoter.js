@@ -1,4 +1,6 @@
 var hist = ["r1"];
+//TODO url指定で、特定のカードを開く(共有システム)
+//TODO 戻るキーでも戻れるように
 window.onload = function(){
     let li = document.getElementsByTagName("li");
     // 最初のカード以外は隠す
