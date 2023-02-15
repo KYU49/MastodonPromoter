@@ -1,6 +1,4 @@
 var hist = ["r1"];
-//TODO url指定で、特定のカードを開く(共有システム)
-//TODO 戻るキーでも戻れるように
 window.onload = function(){
     let li = document.getElementsByTagName("li");
     // 最初のカード以外は隠す
@@ -23,7 +21,20 @@ window.onload = function(){
                 hist.push(targetId);
             });
         }
+
+        // Shareボタン
+        if(li[i].classList.contains("share")){
+            let a = document.createElement("a");
+            a.href = "https://twitter.com/share?ref_src=twsrc%5Etfw";
+            a.classList.add("twitter-share-button");
+            a.setAttribute("data-text", "あなたにぴったりのMastodonインスタンスは「" + li[i].getElementsByClassName("title")[0] +"」");
+            a.setAttribute("data-url", location.href + "?" + li[0].id);
+            a.setAttribute("data-hashtags", "Mastodon診断");
+            a.text = "Tweeterで共有！";
+            li[i].appendChild(a);
+        }
     }
+
     // 戻るボタン
     document.getElementById("back").onclick = function(){
         if(hist.length - 2 >= 0){
@@ -40,6 +51,20 @@ window.onload = function(){
             target.classList.add("current_back");
             hist.pop();
         }
-    };
-    
+    };   
+    if(location.search){
+        moveTo(location.search.substring(1));
+    }
+}
+function moveTo(targetId, current = document.getElementById(hist[0])){
+    let target = document.getElementById(targetId);
+    if(target){
+        current.classList.remove("current");
+        current.classList.remove("current_back");
+        current.classList.add("answered");
+
+        target.classList.add("current");
+        target.classList.remove("hide");
+        hist.push(targetId);
+    }
 }
