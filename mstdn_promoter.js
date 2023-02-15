@@ -25,21 +25,13 @@ window.onload = function(){
         // Shareボタン
         if(li[i].classList.contains("share")){
             let a = document.createElement("a");
-            a.href = "https://twitter.com/share?ref_src=twsrc%5Etfw";
-            a.classList.add("twitter-share-button");
-            a.setAttribute("data-text", "あなたにぴったりのMastodonインスタンスは「" + li[i].getElementsByClassName("title")[0].innerText +"」");
-            a.setAttribute("data-url", location.href + "?" + li[i].id);
-            a.setAttribute("data-hashtags", "Mastodon診断");
+            a.href = "http://twitter.com/share?url=" + location.href + "?" + li[i].id + "&text=" + "あなたにぴったりのMastodonインスタンスは「" + li[i].getElementsByClassName("title")[0].innerText +"」" + "&hashtags=Mastodon診断";
             a.text = "Tweeterで共有！";
+            a.style.margin = "10px 0 10px 0";
             a.target = "_blank";
             li[i].appendChild(a);
         }
     }
-
-    let sc = document.createElement("script");
-    sc.setAttribute("src", "https://platform.twitter.com/widgets.js");
-    sc.setAttribute("charset", "utf-8");
-    document.body.appendChild(sc);
 
     // 戻るボタン
     document.getElementById("back").onclick = function(){
